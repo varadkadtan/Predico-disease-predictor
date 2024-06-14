@@ -21,5 +21,14 @@ Admin: Manage system settings and user accounts.
 Doctor: Access patient data for diagnoses and treatment.
 Patient: Input symptoms and view disease predictions.
 
+### How to use
+First make sure PostgreSQL and pgadmin is install in your system. then you have to manually create a DB instance on PostgreSQL named "predico", better use PgAdmin for that. make a new environment(recommended) and run...
+
+Run pip install -r requirements.txt to install dependencies
+Run python manage.py makemigrations
+Run python manage.py migrate
+Run python manage.py runserver
+Navigate to http://127.0.0.1:8000/ in your browser
+
 ### License
-This project is licensed under the MIT License. See the LICENSE file for details.![Screenshot 2024-06-14 192249](https://github.com/varadkadtan/Predico-disease-predictor/assets/103556886/757fded9-3fd0-4b3a-9f32-957d55e5d01b)
+This project is licensed under the MIT License. See the LICENSE file for details.
