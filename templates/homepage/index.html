@@ -1,0 +1,144 @@
+﻿{% extends "basic.html" %}
+{% load static %}
+
+{% block head %}
+<!-- Additional CSS for custom styling -->
+<style>
+    /* Add your custom CSS here */
+    .jumbotron {
+        background-image: url("{% static 'homepage/medical_background.jpg' %}");
+        background-size: cover;
+        color: #ffffff;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        padding: 100px 0;
+        text-align: center;
+    }
+    .jumbotron h1 {
+        font-size: 4rem;
+    }
+    .lead {
+        font-size: 1.5rem;
+    }
+    .jumbotron .btn-primary {
+        font-size: 1.2rem;
+        padding: 10px 30px;
+    }
+    .card-body {
+        padding: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron jumbotron-fluid bg-transparent text-dark">
+    <div class="container">
+        <h1 class="display-4">Be Your Own Doctor</h1>
+        <p class="lead">Instant guidance on your health concerns through an intelligent disease prediction system.</p>
+        {% if user.is_authenticated %}
+            <!-- Include authenticated user actions here -->
+        {% else %}
+            <p class="lead">
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bd-example-modal-lg">Get Started</button>
+            </p>
+        {% endif %}
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>About Us</h2>
+            <p>It might have happened so many times that you or someone you know needs immediate medical help, but doctors are not available. Our Disease Prediction System is here to provide end-user support and online consultation. Users can get instant guidance on their health concerns through an intelligent system.</p>
+            <p>The application is fed with various details and the diseases associated with those details. It allows users to share their disease-related issues and processes user-specific details to check for various illnesses that could be associated with them. We use intelligent data mining techniques to guess the most accurate illness associated with the patient’s details.</p>
+            <p>Based on the results, patients can contact doctors accordingly for further treatment.</p>
+            <p>Explore our website to learn more!</p>
+        </div>
+        <div class="col-md-4">
+            <!-- Include an image or relevant graphic -->
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="{% url 'sign_in_admin' %}">
+                                <img src="{% static 'homepage/admin.png' %}" class="img-fluid" alt="Admin">
+                                <p class="text-center">Admin</p>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{% url 'sign_in_doctor' %}">
+                                <img src="{% static 'homepage/doctor.png' %}" class="img-fluid" alt="Doctor">
+                                <p class="text-center">Doctor</p>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{% url 'sign_in_patient' %}">
+                                <img src="{% static 'homepage/patient.png' %}" class="img-fluid" alt="Patient">
+                                <p class="text-center">Patient</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+<center><h2>Our Doctors</h2></center>
+<div class="row mt-5 mb-5">
+    <div class="col">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Dr. MANISH BANSAL </h5>
+                <img  alt="admin" src="{% static 'homepage/c31.jpg' %}" width="200" height="150" class="rounded">
+                <p class="card-text">H.No-1283, Ward No-14, New Anaz Mandi Road, P.O-Radaur, Distt. Yamuna Nagar - 135133, (Haryana).</p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Dr. BANSAL JATINDER PAUL </h5>
+                <img  alt="admin" src="{% static 'homepage/c41.jpg' %}" width="200" height="150" class="rounded">
+                <p class="card-text">Om Niwas Khai Basti, Khai Road, Lehragaga-148031, Distt. Sangrur, Punjab.</p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">DR. RADHIKA SWAROOP</h5>
+                <img  alt="admin" src="{% static 'homepage/s72.jpg' %}" width="200" height="150" class="rounded">
+                <p class="card-text">Swaroop Hospital, 1, Hawa Sarak, Civil Lines, # Jaipur-302 019.</p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="footer" class="card bg-dark text-white mt-5">
+    <div class="card-body">
+        <h4>Contact Us</h4>
+        <ul>
+            <li>Email: kadtanvarad@gmail.com</li>
+            <li>Contact no. 987654321</li>
+            <li>Address: Chennai</li>
+        </ul>
+        <p>&copy; 2024 Predico.com. All rights reserved.</p>
+    </div>
+</div>
+{% endblock %}
